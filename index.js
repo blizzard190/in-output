@@ -4,6 +4,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 var start = /start/;
+var stop = /stop/;
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -13,13 +14,24 @@ io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
     var started = start.test(msg);
-    if(started){
-      console.log('Check');
+    var stoped = stop.test(msg);
+
+    if(started && !stoped){
+      msg = msg.substring(msg.indexOf(' ')+1);
+      console.log('start');
+    }else if (stoped) {
+      started = false;
+      console.log('stop');
     }
     switch (msg) {
       case 'left':
-        ks.sendKey('a');
-        ks.sendKey('left');
+        if (started){
+          //ks.sendKey('a').globalDelayPressMillisec(60);
+          //ks.setOption(globalDelayPressMillisec(60), 'a')
+        }else {
+          ks.sendKey('a');
+          ks.sendKey('left');
+        }
         break;
       case 'down':
         ks.sendKey('s');
