@@ -40,17 +40,29 @@ io.on('connection', function(socket){
       case 'right':
         ks.sendKey('right');
         break;
-      case 'a':
+      case 'select':
         ks.sendKey('space');
         break;
+      case 'start':
+        ks.sendkey('enter');
+        break;
       case 'x':
-        ks.sendKey('escape');
+        ks.sendKey('s');
         break;
       case 'b':
-        ks.sendKey('back_space');
+        ks.sendKey('x');
         break;
       case 'y':
-        ks.sendkey('e');
+        ks.sendkey('a');
+        break;
+      case 'a':
+        ks.sendkey('z');
+        break;
+      case 'l':
+        ks.sendkey('q');
+        break;
+      case 'r':
+        ks.sendkey('w');
         break;
       default: return null;
     }
