@@ -10,8 +10,7 @@ Dit is een klein chat system dat werkt met node-key-sender, hiermee kunnen we de
 ## Portfolio
 Zet hier de links neer naar jullie documentatie.
 
-* [Onderzoek]()
-* [Ontwerp]()
-* [Testrapportage]()
+* [Onderzoek]( https://github.com/blizzard190/in-output/blob/master/Portfolio/P01%20-%20Onderzoek.docx) 
 * [Presentatie]()
+* [Trello] (https://trello.com/b/s5ZPAxbx)
 
