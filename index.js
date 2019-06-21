@@ -42,7 +42,7 @@ io.on('connection', function(socket){
           ks.sendKey('space');
           break;
         case /start/i.test(msg):
-          ks.sendkey('enter');
+          ks.sendKey('enter');
           break;
         case /x/i.test(msg):
           ks.sendKey('s');
@@ -51,16 +51,16 @@ io.on('connection', function(socket){
           ks.sendKey('x');
           break;
         case /y/i.test(msg):
-          ks.sendkey('a');
+          ks.sendKey('a');
           break;
         case /a/i.test(msg):
-          ks.sendkey('z');
+          ks.sendKey('z');
           break;
         case /l/i.test(msg):
-          ks.sendkey('q');
+          ks.sendKey('q');
           break;
         case /r/i.test(msg):
-          ks.sendkey('w');
+          ks.sendKey('w');
           break;
         default: return null;
       }
