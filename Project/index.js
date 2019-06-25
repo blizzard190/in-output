@@ -67,57 +67,105 @@ io.on('connection', function(socket){
       }*/
       switch (true) {
         case /left/i.test(msg):
-          robot.keyToggle('left','down');
-          robot.keyToggle('left','up');
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+            robot.keyToggle('left');
+          }else{
+            robot.keyToggle('left','down');
+            robot.keyToggle('left','up');
+          }
           break;
         case /down/i.test(msg):
-          robot.keyToggle('down','down');
-          robot.keyToggle('down','up');
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('down');
+          }else {
+            robot.keyToggle('down','down');
+            robot.keyToggle('down','up');
+          }
           break;
         case /up/i.test(msg):
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('up');
+          }else {
           robot.keyToggle('up','down');
           robot.keyToggle('up','up');
+          }
           break;
         case /right/i.test(msg):
-          robot.keyToggle('right','down');
-          robot.keyToggle('right','up');
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('right');
+          }else{
+            robot.keyToggle('right','down');
+            robot.keyToggle('right','up');
+          }
           break;
         case /select/i.test(msg):
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('space');
+          }else {
           robot.keyToggle('space','down');
           robot.keyToggle('space','up');
+          }
           break;
         case /start/i.test(msg):
-          robot.keyToggle('enter','down');
-          robot.keyToggle('enter','up');
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('enter');
+          }else{
+            robot.keyToggle('enter','down');
+            robot.keyToggle('enter','up');
+          }
           break;
         case /x/i.test(msg):
-          robot.keyToggle('s','down');
-          robot.keyToggle('s','up');
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('x');
+          }else{
+            robot.keyToggle('x','down');
+            robot.keyToggle('x','up');
+          }
           break;
         case /b/i.test(msg):
-          robot.keyToggle('x','down');
-          robot.keyToggle('x','up');
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('b');
+          }else{
+          robot.keyToggle('b','down');
+          robot.keyToggle('b','up');
+          }
           break;
         case /y/i.test(msg):
-          robot.keyToggle('a','down');
-          robot.keyToggle('a','up');
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('y');
+          }else{
+          robot.keyToggle('y','down');
+          robot.keyToggle('y','up');
+          }
           break;
         case /a/i.test(msg):
-          robot.keyToggle('z','down');
-          robot.keyToggle('z','up');
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('a');
+          }else{
+          robot.keyToggle('a','down');
+          robot.keyToggle('a','up');
+          }
           break;
         case /l/i.test(msg):
-          robot.keyToggle('l','down');
-          robot.keyToggle('l','up');
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('l');
+          }else{
+            robot.keyToggle('l','down');
+            robot.keyToggle('l','up');
+          }
           break;
         case /r/i.test(msg):
-          robot.keyToggle('r','down');
-          robot.keyToggle('r','up');
+          if(/start/i.test(msg)||/stop/i.test(msg)){
+          robot.keyToggle('r');
+          }else{
+            robot.keyToggle('r','down');
+            robot.keyToggle('r','up');
+          }
           break;
         default: return null;
+      }
     }
-  }
-});
+  });
 });
 
 http.listen(port, function(){
